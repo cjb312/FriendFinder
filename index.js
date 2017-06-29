@@ -3,16 +3,16 @@ var express = require(express);
 var bodyParser = require(body-parser);
 var path = require(path);
 
-//server port for node
+//port for heroku
 var app = express;
-var PORT = 3000;
+var PORT = = process.env.port || 3000;
 
 //listens for when the is called upon and logs within terminal
 app.listen(PORT, function(){
-	console.log("Application listening on PORT:" + PORT)
+	console.log("Application listening on PORT:" + PORT);
 });
 
-//required body-parser snippets from npm website
+//parsing data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.text());
